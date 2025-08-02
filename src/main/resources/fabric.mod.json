@@ -1,11 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "mod-loading-screen",
+  "id": "mulplat-loading",
   "version": "${version}",
   "name": "Mod Loading Screen",
-  "description": "An advanced loading screen with the loading progress of mods",
+  "description": "The loading screen for MulPlat",
   "authors": [
-    "Gaming32"
+    "Gaming32",
+    "MultyPlat",
+    "OptionallyBlueStudios/OptionallyBlue"
   ],
   "contact": {},
   "license": "MIT",
@@ -15,7 +17,7 @@
     "fabricloader": ">=0.12.0"
   },
   "languageAdapters": {
-    "mod-loading-screen:totallyARealLanguageAdapter": "io.github.gaming32.modloadingscreen.ModLoadingScreen"
+    "mod-loading-screen:totallyARealLanguageAdapter": "io.github.multyplat.modloadingscreen.ModLoadingScreen"
   },
   "entrypoints": {
     "preLaunch": [
