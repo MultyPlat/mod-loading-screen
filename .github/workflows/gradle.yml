@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4  # ✅ UPDATED from v2.1.0 to v4
+        uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: zulu
@@ -27,8 +27,12 @@ jobs:
           echo "Contents of build/libs:"
           ls -l build/libs || echo "No JARs found!"
 
-      - name: Upload build JARs
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-jars
-          path: build/libs/*.jar
+      - name: Upload each JAR as a separate artifact
+        run: |
+          for file in build/libs/*.jar; do
+            echo "Uploading $file"
+            artifact_name=$(basename "$file" .jar)
+            gh run upload-artifact --name "$artifact_name" --path "$file"
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
