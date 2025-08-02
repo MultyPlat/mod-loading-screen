@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "mulplat-loading",
   "version": "${version}",
-  "name": "Mod Loading Screen",
+  "name": "MultyLoad",
   "description": "The loading screen for MulPlat",
   "authors": [
     "Gaming32",
